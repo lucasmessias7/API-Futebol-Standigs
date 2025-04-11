@@ -26,7 +26,10 @@ url_brasileirao = 'https://api.football-data.org/v4/competitions/2013/standings'
 saida_champions = requests.get(url_brasileirao, headers=headers)
 saida_champions = saida_champions.json()
 
+standings = saida_champions['standings'][0]['table']
 
 
-for brasileirao in saida_champions['standings']:
-    print(f'times: {brasileirao['team']}')
+for brasileirao in standings:
+    print(f'times: {brasileirao['team']['name']} -- id: {brasileirao['team']['id']} -- {brasileirao['team']['crest']} \n' )
+
+for nra
