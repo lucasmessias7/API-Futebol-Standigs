@@ -28,8 +28,20 @@ saida_champions = saida_champions.json()
 
 standings = saida_champions['standings'][0]['table']
 
+chaves = []
+tabela_brasileira = []
+dicionario = {}
 
 for brasileirao in standings:
-    print(f'times: {brasileirao['team']['name']} -- id: {brasileirao['team']['id']} -- {brasileirao['team']['crest']} \n' )
+   id_team = {brasileirao['team']['id']}
+   dados_restantes = (f'{brasileirao['team']['name']} - Partidas: {brasileirao['playedGames']}  Vitorias: {brasileirao['won']}  Empates: {brasileirao['draw']} Derrotas: {brasileirao['lost']}' )
+   colocao = (f'Posição: {brasileirao['position']} ')
+   tabela_brasileira.append(dados_restantes) 
+   chaves.append(colocao)
 
-for nra
+# print(tabela_brasileira)
+# print(standings)
+for i in range(len(chaves)):
+    dicionario[chaves[i]] = tabela_brasileira[i]
+
+print(dicionario)
