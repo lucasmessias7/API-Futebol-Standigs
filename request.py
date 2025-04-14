@@ -34,14 +34,16 @@ dicionario = {}
 
 for brasileirao in standings:
    id_team = {brasileirao['team']['id']}
-   dados_restantes = (f'{brasileirao['team']['name']} - Partidas: {brasileirao['playedGames']}  Vitorias: {brasileirao['won']}  Empates: {brasileirao['draw']} Derrotas: {brasileirao['lost']}' )
-   colocao = (f'Posição: {brasileirao['position']} ')
+   dados_restantes = (f'{brasileirao['team']['name']}'), (f'Partidas: {brasileirao['playedGames']}'), (f'Vitorias: {brasileirao['won']}'), (f'Empates: {brasileirao['draw']}'), (f'Derrotas: {brasileirao['lost']}' )
+   colocao = (f'Posição: {brasileirao['position']}')
    tabela_brasileira.append(dados_restantes) 
    chaves.append(colocao)
 
 # print(tabela_brasileira)
 # print(standings)
-for i in range(len(chaves)):
-    dicionario[chaves[i]] = tabela_brasileira[i]
+def dados_brasileirao():
+    for i in range(len(chaves)):
+        dicionario[chaves[i]] = tabela_brasileira[i]
+    return dicionario
 
-print(dicionario)
+dados_brasileirao()
