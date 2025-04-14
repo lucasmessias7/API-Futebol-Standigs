@@ -3,7 +3,7 @@ from dotenv import load_dotenv
 import os
 
 load_dotenv(dotenv_path='C:/Users/539555318/Desktop/API-NBA/.venv/.env')
-token = os.getenv('token')
+token = os.getenv('token_api')
 
 
 url = 'https://api.football-data.org/v4/competitions'
